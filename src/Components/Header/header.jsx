@@ -1,21 +1,30 @@
 import { Link } from "react-router-dom";
-import Banner from "../../Assets/banner.jpg";
-import Logo from "../../Assets/LogoMdy.png";
+import Logo from "../../Assets/LogoMdy.jpg";
+import "./header.css";
 
 function Header() {
   return (
-    <section>
-      <img src={Banner} alt="" />
-      <div>
-        <button>
-          <i className="fa-solid fa-bars-staggered"></i>
-          <h3>CATEGORIES</h3>
+    <main>
+      <div className="header-top">
+        <button className="header-top-logo">
+          <Link className="header-logo-image" to={"/"}>
+            <img src={Logo} alt="" />
+          </Link>
         </button>
-        <Link to={"/"}>
-          <img src={Logo} alt="" />
-        </Link>
+        <form className="principal-form-container" action="">
+          <input placeholder="Buscar aqui..." type="text" />
+          <button className="form-search_icon">
+            <i className="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
       </div>
-    </section>
+      <div className="header-bottom">
+        <button className="header-bottom-menu_icon">
+          <h3>CATEGORIES</h3>
+          <i className="fa-solid fa-angle-down"></i>
+        </button>
+      </div>
+    </main>
   );
 }
 export default Header;
