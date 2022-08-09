@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { apiKey } from "../../Utils/utils.js";
+import "./home.css";
 
 function Home() {
   const [movies, setMovies] = useState();
@@ -32,40 +33,43 @@ function Home() {
 
   return (
     <main>
-      <section>
+      <section className="movies-cards-container">
         {movies?.results?.map(function (movie) {
           return (
-            <Link to={"/"} key={movie.id}>
-              <img
-                src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
-                alt=""
-              />
-              <h3>{movie.title}</h3>
-              <p>{movie.release_date}</p>
-              <div>
-                <p>
-                  {movie.vote_average * 10}
-                  <span>%</span>
-                </p>
+            <Link className="movie-card-container" to={"/"} key={movie.id}>
+              <div className="movie-image-container">
+                <img
+                  src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
+                  alt=""
+                  className="movie-card-image "
+                />
+                <p className="movie-rating">{movie.vote_average * 10}%</p>
               </div>
+              <h3 className="movie-card-title">{movie.title}</h3>
+              <p className="movie-card-date">{movie.release_date}</p>
             </Link>
           );
         })}
       </section>
-      <div>
+      <div className="buttons-home-container">
         <button
+          className="button-page-previous"
           onClick={function () {
             nextPage(-1);
           }}
+          disabled={currentPage === 1}
         >
+          <i className="fa-solid fa-angle-left"></i>
           Anterior
         </button>
         <button
+          className="button-page-next"
           onClick={function () {
             nextPage(1);
           }}
         >
           Siguiente
+          <i className="fa-solid fa-chevron-right"></i>
         </button>
       </div>
     </main>
