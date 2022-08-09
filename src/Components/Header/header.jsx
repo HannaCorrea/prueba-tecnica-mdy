@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import Logo from "../../Assets/LogoMdy.jpg";
+import MenuCategories from "../../Components/MenuCategories/menuCategories.jsx";
 import "./header.css";
 
 function Header() {
   return (
-    <main>
+    <main className="principal-header">
       <div className="header-top">
         <button className="header-top-logo">
           <Link className="header-logo-image" to={"/"}>
@@ -18,12 +20,7 @@ function Header() {
           </button>
         </form>
       </div>
-      <div className="header-bottom">
-        <button className="header-bottom-menu_icon">
-          <h3>CATEGORIES</h3>
-          <i className="fa-solid fa-angle-down"></i>
-        </button>
-      </div>
+      <MenuCategories />
     </main>
   );
 }
