@@ -36,7 +36,11 @@ function Home() {
       <section className="movies-cards-container">
         {movies?.results?.map(function (movie) {
           return (
-            <Link className="movie-card-container" to={"/"} key={movie.id}>
+            <Link
+              className="movie-card-container"
+              to={`/pelicula/${movie.id}`}
+              key={movie.id}
+            >
               <div className="movie-image-container">
                 <img
                   src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
