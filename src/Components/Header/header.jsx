@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
 import Logo from "../../Assets/LogoMdy.jpg";
 import MenuCategories from "../../Components/MenuCategories/menuCategories.jsx";
 import "./header.css";
