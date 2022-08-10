@@ -21,10 +21,7 @@ function CategoryPage() {
         const response = await fetch(
           `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=es&page=${currentPage}&with_genres=${params.genreId}`
         );
-
         const data = await response.json();
-        console.log(data.results);
-
         setCategoryMovies(data.results);
       }
       getCategory();

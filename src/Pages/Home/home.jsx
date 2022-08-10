@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import CardContainer from "../../Components/CardContainer/cardContainer.jsx";
+import banner from "../../Assets/banner.jpg";
 import { apiKey } from "../../Utils/utils.js";
-import "./home.css";
 
 function Home() {
   const [movies, setMovies] = useState();
@@ -22,9 +22,7 @@ function Home() {
         );
 
         const data = await response.json();
-
         setMovies(data);
-        console.log(data);
       }
       getMovies();
     },
@@ -33,26 +31,10 @@ function Home() {
 
   return (
     <main>
+      <img src={banner} alt="" className="banner" />
       <section className="movies-cards-container">
         {movies?.results?.map(function (movie) {
-          return (
-            <Link
-              className="movie-card-container"
-              to={`/pelicula/${movie.id}`}
-              key={movie.id}
-            >
-              <div className="movie-image-container">
-                <img
-                  src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
-                  alt=""
-                  className="movie-card-image "
-                />
-                <p className="movie-rating">{movie.vote_average * 10}%</p>
-              </div>
-              <h3 className="movie-card-title">{movie.title}</h3>
-              <p className="movie-card-date">{movie.release_date}</p>
-            </Link>
-          );
+          return <CardContainer movie={movie} key={movie.id} />;
         })}
       </section>
       <div className="buttons-home-container">
