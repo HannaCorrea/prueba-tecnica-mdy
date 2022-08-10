@@ -1,25 +1,30 @@
 .principal-form-container {
-  padding-bottom: 10px;
+  width: calc(100% - 100px);
+  max-width: 250px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 4px 1px rgb(255, 255, 255);
+  border-radius: 8px;
+  padding: 2px 6px;
 }
 
 .principal-form-container input {
+  width: calc(100% - 26px);
+  font-size: 16px;
   padding: 5px 10px;
-  border-right: none;
-  border-top-left-radius: 5px;
-  border: 1px solid rgba(0, 0, 0, 0.742);
-  border-bottom-left-radius: 5px;
+  background-color: transparent;
+  border: 0;
+  color: #fff;
 }
 
 .form-search_icon {
-  border: 1px solid rgba(0, 0, 0, 0.742);
   padding: 5px;
-  border-top-right-radius: 5px;
-  background-color: #000;
-  border-bottom-right-radius: 5px;
+  background-color: transparent;
+  border: 0;
 }
 
 .form-search_icon i {
-  font-size: 13px;
+  font-size: 16px;
   cursor: pointer;
-  color: #fff;
+  color: rgb(207, 207, 207);
 }

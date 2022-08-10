@@ -1,22 +1,20 @@
 import { Link } from "react-router-dom";
-import Logo from "../../Assets/LogoMdy.jpg";
+import Logo from "../../Assets/MdyPositivo.png";
 import MenuCategories from "../../Components/MenuCategories/menuCategories.jsx";
 import SearchBar from "../SearchBar/searchBar";
 import "./header.css";
 
 function Header() {
   return (
-    <main className="principal-header">
+    <header className="principal-header">
       <div className="header-top">
-        <button className="header-top-logo">
-          <Link className="header-logo-image" to={"/"}>
-            <img src={Logo} alt="" />
-          </Link>
-        </button>
+        <Link className="header-logo" to={"/"}>
+          <img className="header-logo-image" src={Logo} alt="" />
+        </Link>
         <SearchBar />
       </div>
       <MenuCategories />
-    </main>
+    </header>
   );
 }
 export default Header;
