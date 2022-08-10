@@ -14,8 +14,6 @@ function MenuCategories() {
         `https://api.themoviedb.org/3/genre/movie/list?api_key=${apiKey}&language=es`
       );
       const data = await response.json();
-      console.log(data);
-
       setGenres(data.genres);
     }
     getGenres();

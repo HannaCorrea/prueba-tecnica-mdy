@@ -7,7 +7,6 @@ function DetailPage() {
   const [movie, setMovie] = useState();
   const params = useParams();
 
-  console.log(movie);
   useEffect(
     function () {
       async function getMovie() {
