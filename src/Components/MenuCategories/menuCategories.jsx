@@ -22,25 +22,23 @@ function MenuCategories() {
   }, []);
 
   return (
-    <main className="menu-container">
-      <div className="header-bottom">
-        <button
-          onClick={function () {
-            function handleAccordion() {
-              setActiveMenu(!activeMenu);
-            }
-            handleAccordion();
-          }}
-          className="header-bottom-menu_icon"
-        >
-          <h3>CATEGORIES</h3>
-          <i
-            className={
-              activeMenu === false ? "fas fa-chevron-down" : "fas fa-angle-up"
-            }
-          ></i>
-        </button>
-      </div>
+    <section className="menu-container">
+      <button
+        onClick={function () {
+          function handleAccordion() {
+            setActiveMenu(!activeMenu);
+          }
+          handleAccordion();
+        }}
+        className="menu-button-trigger"
+      >
+        <h3>CATEGORIES</h3>
+        <i
+          className={
+            activeMenu === false ? "fas fa-chevron-down" : "fas fa-angle-up"
+          }
+        ></i>
+      </button>
       <nav
         className={`genres-container ${
           activeMenu === true ? "genres-container--show" : ""
@@ -61,7 +59,7 @@ function MenuCategories() {
           );
         })}
       </nav>
-    </main>
+    </section>
   );
 }
 
