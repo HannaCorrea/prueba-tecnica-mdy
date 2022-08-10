@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Logo from "../../Assets/LogoMdy.jpg";
 import MenuCategories from "../../Components/MenuCategories/menuCategories.jsx";
+import SearchBar from "../SearchBar/searchBar";
 import "./header.css";
 
 function Header() {
@@ -12,12 +13,7 @@ function Header() {
             <img src={Logo} alt="" />
           </Link>
         </button>
-        <form className="principal-form-container" action="">
-          <input placeholder="Buscar aqui..." type="text" />
-          <button className="form-search_icon">
-            <i className="fa-solid fa-magnifying-glass"></i>
-          </button>
-        </form>
+        <SearchBar />
       </div>
       <MenuCategories />
     </main>

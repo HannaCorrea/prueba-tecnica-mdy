@@ -8,6 +8,7 @@ function CardContainer({ movie }) {
         <img
           className="movie-card-image"
           src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
+          alt="/"
         />
         <p className="movie-rating">
           {movie.vote_average * 10}
