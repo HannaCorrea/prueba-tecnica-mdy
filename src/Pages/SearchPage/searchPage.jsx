@@ -25,7 +25,7 @@ function SearchPage() {
   return (
     <section className="movies-cards-container">
       {movies?.map(function (movie) {
-        return <CardContainer movie={movie} />;
+        return <CardContainer movie={movie} key={movie.id} />;
       })}
     </section>
   );
