@@ -6,3 +6,54 @@
   outline: 0;
   font-family: "Source Sans Pro", Arial, sans-serif;
 }
+
+.movies-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+  background-color: rgba(0, 0, 0, 0.081);
+}
+
+.buttons-home-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.081);
+}
+
+.button-page-previous,
+.button-page-next {
+  font-size: 18px;
+  padding: 10px;
+  width: 30%;
+  border: none;
+  border-radius: 10px;
+  color: #000;
+  margin: 0 20px;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.081);
+}
+
+@media (min-width: 768px) {
+  .button-page-previous,
+  .button-page-next {
+    width: 14%;
+  }
+}
+
+.button-page-next:hover {
+  font-weight: bold;
+}
+
+.button-page-previous:hover {
+  font-weight: bold;
+}
+
+.button-page-next i {
+  margin-left: 7px;
+}
+
+.button-page-previous i {
+  margin-right: 7px;
+}
